@@ -29,7 +29,8 @@
 
 section{
     padding: 30px 4rem;
-    overflow: hidden;
+    /* El overflow hidden se lo tengo que colocar cuando se haga mobile o tablet */
+    /* overflow: hidden; */
 }
 
 img{
@@ -242,7 +243,7 @@ body{
 
 }
 
-.home-text h1{
+.home-text .multiple-text{
     text-shadow: var(--text-shadow);
     font-size: 2rem;
     color: var(--white-text);
@@ -319,7 +320,7 @@ body{
 .about{
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    justify-content: space-evenly;
     background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
@@ -365,7 +366,7 @@ body{
     border: 2px solid var(--color2);
 }
 
-.card_box {
+.card-box {
     transition: all .3s;
     display: flex;
     flex-direction: column;
@@ -376,7 +377,7 @@ body{
     width: 33%;
 }
 
-.card_box:nth-child(2){
+.card-box:nth-child(2){
     border-left: 2px solid var(--white-text);
     border-right: 2px solid var(--white-text);
 }
@@ -393,7 +394,7 @@ body{
     text-shadow: var(--text-shadow);
 }
 
-.card_box .subtitle{
+.card-box .subtitle{
     color: var(--white-text);
     font-size: 0.8rem;
     font-weight: 600;
@@ -474,7 +475,7 @@ body{
 .insurance{
     display: flex;
     flex-direction: column;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
 }
 
 .insurance-title{
@@ -517,13 +518,14 @@ body{
 .descripcion{
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: flex-start;
     align-items: center;
     width: 80%;
     border-radius: 1rem;
     position: absolute;
     padding: 0rem 1rem;
     opacity: 0;
+    height: 100%;
     z-index: 0;
 }
 
@@ -533,7 +535,6 @@ body{
     url(../images/automotor.jpg);
     background-size: cover;
     background-position: center;
-    padding: 1rem 0rem;
 }
 
 .motos{
@@ -542,7 +543,6 @@ body{
     url(../images/moto.jpg);
     background-size: cover;
     background-position: center;
-    padding: 1rem 0rem;
 }
 
 .hogar{
@@ -551,7 +551,6 @@ body{
     url(../images/casa.jpg);
     background-size: cover;
     background-position: center;
-    padding: .5rem 1rem;
 }
 
 .comercio{
@@ -560,7 +559,6 @@ body{
     url(../images/pyme.jpg);
     background-size: cover;
     background-position: center;
-    padding: .5rem 1rem;
 }
 
 .art{
@@ -569,7 +567,6 @@ body{
     url(../images/art.jpg);
     background-size: cover;
     background-position: center;
-    padding: 1rem 1rem;
 }
 
 .comercio p:nth-child(2){
@@ -580,9 +577,9 @@ body{
     padding-left: 2rem;
 }
 
-.descripcion ul{
+/* .descripcion ul{
     height: inherit;
-}
+} */
 
 .automotor > *:not(h4),
 .motos > *:not(h4),
@@ -623,9 +620,8 @@ body{
     align-items: flex-end;
     overflow: hidden;
     padding: 1rem;
-    width: 100%;
-    min-width: 175px;
-    max-height: 275px;
+    /* min-width: 175px; */
+    min-height: 275px;
     cursor: pointer;
     opacity: .8;
     text-align: center;
@@ -763,24 +759,6 @@ body{
 
 }
 
-/* @media (max-width: 600px) {
-    .page-content {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 800px) {
-    .page-content {
-        grid-template-columns: repeat(4, 1fr);
-    }
-} */
-
-@media (min-width: 600px) {
-    .card {
-        height: 350px;
-    }
-}
-
 /* Siniestros */
 
 .accidents{
@@ -821,7 +799,7 @@ body{
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    height: 275px;
+    min-height: 275px;
     padding: 5px;
     box-shadow: var(--box-shadow);
     border-radius: 3rem;
@@ -930,17 +908,14 @@ body{
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-image: linear-gradient(135deg, #f5f7fa 0%, #293f64 100%);
+    background-image: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
     justify-content: center;
     align-items: center;
-    overflow: hidden;
 }
 
 .form{
     width: 100%;
     max-width: 820px;
-    height: 500px;
-    background: #FFF;
     border-radius: 10px;
     box-shadow: var(--box-shadow);
     z-index: 100;
@@ -950,12 +925,18 @@ body{
 }
 
 .contact-form{
-    background: #1abc9c;
+    background: var(--color2);
+    padding: 2rem 0;
     position: relative;
+    display: flex;
+    flex-direction: column;
 }
 
 .contact-info{
-    background: var(--btn-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    background: rgba(123, 115, 146);
     position: relative;
 }
 
@@ -986,7 +967,7 @@ body{
     position: absolute;
     width: 26px;
     height: 26px;
-    background: #1abc9c;
+    background: rgba(123, 115, 146);
     transform: rotate(45deg);
     top: 50px;
     left: -13px;
@@ -1001,8 +982,6 @@ form{
 
 .title{
     color: var(--white-text);
-    font-weight: 500;
-    font-size: 1.5rem;
     line-height: 1;
     margin-bottom: .7rem;
 }
@@ -1015,14 +994,14 @@ form{
 .input{
     width: 100%;
     outline: none;
-    border: 2px solid var(--white-text);
+    border: 1px solid var(--white-text);
     background: none;
     padding: .6rem 1.2rem;
     color: var(--white-text);
     font-weight: 500;
-    font-size: .95rem;
+    font-size: .6rem;
     letter-spacing: .5px;
-    border-radius: 25px;
+    border-radius: 15px;
     transition: .3s;
 }
 
@@ -1041,7 +1020,7 @@ textarea.input{
     transform: translateY(-50%);
     padding: 0 .4rem;
     color: #fafafa;
-    font-size: .9rem;
+    font-size: .7rem;
     font-weight: 400;
     pointer-events: none;
     z-index: 1000;
@@ -1055,19 +1034,11 @@ textarea.input{
 
 .btn-form{
     padding: .6rem 1.3rem;
-    background: #FFF;
-    border: 2px solid #fafafa;
     font-size: .95rem;
-    color: var(--color1);
     line-height: 1;
     border-radius: 25px;
     cursor: pointer;
     transition: .3s;
-}
-
-.btn-form{
-    background: transparent;
-    color: #fff;
 }
 
 .input-container span{
@@ -1090,7 +1061,7 @@ textarea.input{
     opacity: 0;
     transition: .3s;
     height: 5px;
-    background: #1abc9c;
+    background: var(--color2);
     top: 50%;
     transform: translateY(-50%);
 }
@@ -1107,7 +1078,7 @@ textarea.input{
     top: 0;
     transform: translateY(-50%);
     left: 25px;
-    font-size: .8rem;
+    font-size: .75rem;
 }
 
 .input-container.focus span:before,
@@ -1116,13 +1087,72 @@ textarea.input{
     opacity: 1;
 }
 
+.contact-info{
+    padding: 2.3rem 2.2rem;
+    position: relative;
+}
+
+.contact-info .title{
+    color: var(--btn-color);
+}
+
+.contact-text{
+    color: var(--white-text);
+    font-size: .7rem;
+    margin: 1rem 0;
+}
+
+.information{
+    display: flex;
+    margin: .7rem 0;
+    align-items: center;
+    font-size: .95rem;
+}
+
+.icon{
+    font-size: 1.7rem;
+    margin-right: .7rem;
+    box-shadow: none;
+}
+
+.contact-info::before{
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    border: 22px  solid var(--color2);
+    border-radius: 50%;
+    bottom: -77px;
+    right: 50px;
+    opacity: .2;
+}
+
+.contact-info::after{
+    content: '';
+    position: absolute;
+    width: 110px;
+    height: 100px;
+    border: 22px  solid var(--color2);
+    border-radius: 50%;
+    top: -50px;
+    left: -50px;
+    opacity: .2;
+}
+
+.information p{
+    font-size: .85rem;
+    color: var(--btn-color);
+}
+
+
+
 
 /* ---------------------- Footer & Copyright ---------------------- */
 
 .footer{
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    background: linear-gradient(180deg, #666666 100%, #25252580 80%);
+    background: linear-gradient(180deg, #a8a8a8 100%, #00000080 80%);
     user-select: none;
 }
 
@@ -1135,7 +1165,7 @@ textarea.input{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--white-text);
+    font-weight: 600;
 }
 
 .footer-box:nth-child(2){
@@ -1143,8 +1173,7 @@ textarea.input{
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    color: var(--white-text);
-    text-shadow: var(--text-shadow);
+    font-weight: 600;
 }
 
 .footer-box:nth-child(3){
@@ -1198,3 +1227,114 @@ textarea.input{
     border-radius: .4rem;
     background: var(--color1);
 }
+
+/* ---------------------- Breakpoints ---------------------- */
+
+/* 0-320 / 480 / 768 / 960 / 1024 / 1328 */
+
+/* @media (max-width: 600px) {
+    .page-content {
+        grid-template-columns: repeat(2, 1fr);
+    }
+} */
+
+/* @media (min-width: 800px) {
+    .page-content {
+        grid-template-columns: repeat(4, 1fr);
+    }
+} */
+
+/* @media (min-width: 600px) {
+    .card {
+        height: 350px;
+    }
+} */
+
+/* ---------------------- Pantallas XG ---------------------- */
+
+@media screen and (min-width: 1329px) {
+
+    section{
+        padding: 30px 10vw;
+        /* El overflow hidden se lo tengo que colocar cuando se haga mobile o tablet */
+        /* overflow: hidden; */
+    }
+
+    .about{
+        min-height: 85vh;
+    }
+
+    .accidents-container{
+        grid-template-columns: repeat(4, minmax(200px, 300px));
+    }
+
+    .contact{
+        min-height: 70vh;
+    }
+
+}
+
+/* ---------------------- Pantallas Grandes ---------------------- */
+
+@media screen and (min-width: 1024px) and (max-width: 1328px){
+
+    .contact{
+        min-height: 50vh ;
+    }
+
+}
+
+/* ---------------------- Pantallas Tablets ---------------------- */
+
+@media screen and (min-width: 768px) and (max-width: 1024px){
+
+    .contact{
+        min-height: 50vh ;
+    }
+    
+    .page-content{
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: auto auto 1fr;
+    }
+    .description-container{
+        grid-column-start: 1;
+        grid-column-end: 4;
+    }
+
+    .descripcion{
+        height: 100%;
+        width: 90%;
+    }
+
+    .comercio,
+    .automotor, 
+    .motos{
+        padding: 0 1.5rem;
+    }
+
+}
+
+@media screen and (min-width: 768px) and (max-width: 960px){
+
+    
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px){
+
+}
+
+/* ---------------------- Pantallas Moviles Grandes ---------------------- */
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+
+}
+
+/* ---------------------- Pantallas Moviles Chicos ---------------------- */
+
+@media screen and (max-width: 320px){
+
+}
+
+
+
+

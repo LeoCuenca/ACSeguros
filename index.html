@@ -54,9 +54,9 @@
 
 <!-------------------------------------------- Home -------------------------------------------->
 
-    <section class="home" id="home">
+    <section class="home home-content" id="home">
         <div class="home-text">
-            <h1>Servicio al Cliente</h1>
+            <h1><span class="multiple-text"></span></h1>
             <p>Cuidamos lo que mas te importa. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Culpa et ab esse eligendi suscipit numquam!</p>
             <a href="#about-title" class="custom-btn btn">Ver mas</a>
         </div>
@@ -73,21 +73,21 @@
             <p>En un mundo lleno de incertidumbres, estamos aquí para <span class="bold">ofrecer orientación experta y soluciones personalizadas</span> en seguros que se adaptan a tus necesidades individuales y familiares.</p>
         </div>
         <div class="points-container">
-            <div class="card_box">
+            <div class="card-box">
                 <div class="big-cont">
                     <span>+</span>
                     <span>30</span>
                 </div>
                 <span class="subtitle">Años de trayectoria</span>
             </div>
-            <div class="card_box">
+            <div class="card-box">
                 <div class="big-cont">
                     <span>+</span>
                     <span>4</span>
                 </div>
                 <span class="subtitle">Compañías aseguradoras</span>
             </div>
-            <div class="card_box">
+            <div class="card-box">
                 <div class="big-cont">
                     <span>SSN</span>
                 </div>
@@ -114,7 +114,7 @@
                     </ul>
                 </div>
             </div>
-        </div>    
+        </div>
     </section>
 
  <!-------------------------------------------- Seguros -------------------------------------------->
@@ -123,7 +123,7 @@
         <h2 class="insurance-title" id="insurance-title">Seguros</h2>
         <p>En <span class="bold">A&C Brokers</span>, entendemos que cada persona y cada empresa tiene necesidades únicas cuando se trata de proteger su patrimonio. Es por eso que ofrecemos una amplia gama de <span class="bold">soluciones de seguros</span> diseñadas para adaptarse a diversos estilos de vida y modelos de negocio. Desde proteger tu hogar y vehículos hasta garantizar la seguridad financiera de tu familia y empleados, estamos aquí para ofrecerte la <span class="bold">tranquilidad y seguridad</span> que necesitas.</p>
         <div class="page-content">
-            <div class="card" data-index="0"">
+            <div class="card active" data-index="0"">
                 <div class="content">
                     <h4 class="card-title">Automotor</h4>
                     <p class="copy">Amplia variedad de coberturas para la protección de su vehículo. Compañías lideres con trayectoria, para brindar la mejor solución a la medida y necesidad del cliente.</p>
@@ -269,7 +269,7 @@
                         <ul class="tab">
                             <li>Huracán, vendaval, ciclón, tornado y granizo.</li>
                             <li>Daños por agua al edificio y contenido, incluye inundación.</li>
-                            <li>Seguro tecnico equipos moviles.</li>
+                            <li>Seguro técnico equipos moviles.</li>
                             <li>Todo riesgo para máquinas de oficina, incluyendo diferencia de tensión sin necesidad de declaración de objetos.</li>
                         </ul>
                         <li><span class="bold">Coberturas Adicionales</span></li>
@@ -389,16 +389,30 @@
 <!-------------------------------------------- Contact ------------------------------------------------------->
 
     <section class="contact" id="contact">
-        <h2 class="contact-title" id="contact-title">Contacto</h2>
+        <h2 class="contact-title" id="contact-title"></h2>
         <div class="form">
             <div class="contact-info">
-
+                <h2><span class="title multiple-contact"></span></h2>
+                <p class="contact-text">A la brevedad uno de nuestros asesores se contactara para brindarle la mejor atencion.</p>
+                <div class="info">
+                    <div class="information">
+                        <i class="bx bx-map icon"></i>
+                        <p>Luis Maria Campos 1528, Moron</p>
+                    </div>
+                    <div class="information">
+                        <i class="bx bx-envelope icon" ></i>
+                        <p>lorem@ipsum.com</p>
+                    </div>
+                    <div class="information">
+                        <i class="bx bxl-whatsapp icon"></i>
+                        <p>11-1234-5678</p>
+                    </div>
+                </div>
             </div>
             <div class="contact-form">
                 <span class="circle one"></span>
                 <span class="circle two"></span>
-                <form action="index.html">
-                    <h3 class="title"></h3>
+                <form action="index.html" autocomplete="off">
                     <div class="input-container">
                         <input type="text" name="name" class="input">
                         <label for="">Nombre</label>
@@ -414,7 +428,7 @@
                         <label for="">Mensaje</label>
                         <span>Mensaje</span>
                     </div>
-                    <input type="submit" value="Send" class="btn-form">
+                    <input type="submit" value="Send" class="btn custom-btn btn-form">
                 </form>
             </div>
         </div>
@@ -441,15 +455,23 @@
         <div class="copy-container">
             <div class="copyright">
                 <p>A&C Broker de Seguros | &#169; SkyDesign Diseño Web</p>
-            </div>
-            <div class="footer-iconTop">
+            </div>            <div class="footer-iconTop">
                 <a href="#home"><i class='bx bx-up-arrow-alt' ></i></a>
             </div>
         </div>
-    </div>    
+    </div>
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/scripts.js"></script>
+        <!-- Scroll Reveal -->
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!-- Typed js -->
+        <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+        <!-- Carrousel Clientes -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+        <!-- Custom JS -->
+        <script src="js/scripts.js"></script>
     
 </body>
 </html>

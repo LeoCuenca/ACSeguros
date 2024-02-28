@@ -32,7 +32,8 @@ $(function() {
     }
   });
 
-// MARCA DACADA BOTON A MEDIDA QUE ME DESPLAZO
+
+
 
 document.addEventListener("DOMContentLoaded", function() {
 
@@ -69,12 +70,23 @@ document.addEventListener("DOMContentLoaded", function() {
                   descripcion.classList.remove('visible');
               });
               if (window.innerWidth > 1024){
-                console.log('MAYOR A 1024');
-                contenedor.style.height = '46rem';
+                contenedor.style.height = '57rem';
               }
               else{
-                console.log("MENOR A 1024");
-                contenedor.style.height = contenedorHeight + 450 + 'px';
+                if(window.innerWidth > 768){
+                  contenedor.style.height = contenedorHeight + 700 + 'px';
+                }
+                else{
+                  if(window.innerWidth > 480){
+                    contenedor.style.height = contenedorHeight + 600 + 'px';
+                  }
+                  else{
+                    if(window.innerWidth > 320){
+                      contenedor.style.height = contenedorHeight + 700 + 'px'
+                    }
+                  }
+                }
+                
               }
 
               descripciones[index].classList.add('visible');
@@ -124,35 +136,42 @@ const typedContact = new Typed('.multiple-contact',{
 
 ScrollReveal().reveal('.home-text p', { origin: 'left', reset:true, distance:'120px', delay:100, duration:2000 });
 
-
-
-
-
-
-
 ScrollReveal().reveal('.card-box .big-cont', { origin: 'top', reset:true, distance:'20px', delay:100, duration:1000 });
 ScrollReveal().reveal('.card-box .subtitle', { origin: 'bottom', reset:true, distance:'40px', delay:100, duration:1000 });
 
+ScrollReveal().reveal('.page-content .card:nth-child(1)', { origin: 'top', reset:false, distance:'50px', delay:200, duration:1000});
+ScrollReveal().reveal('.page-content .card:nth-child(2)', { origin: 'top', reset:false, distance:'50px', delay:400, duration:1000 });
+ScrollReveal().reveal('.page-content .card:nth-child(3)', { origin: 'top', reset:false, distance:'50px', delay:600, duration:1000 });
+ScrollReveal().reveal('.page-content .card:nth-child(4)', { origin: 'top', reset:false, distance:'50px', delay:800, duration:1000 });
+ScrollReveal().reveal('.page-content .card:nth-child(5)', { origin: 'top', reset:false, distance:'50px', delay:1000, duration:1000 });
+
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(1)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(2)', { origin: 'bottom', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(3)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(4)', { origin: 'bottom', reset:false, distance:'100px', delay:200, duration:500});
+
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(5)', { origin: 'bottom', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(6)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(7)', { origin: 'bottom', reset:false, distance:'100px', delay:200, duration:500});
+ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(8)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
 
 
 
 
 
-ScrollReveal().reveal('.page-content .card:nth-child(1)', { origin: 'top', reset:true, distance:'50px', delay:200, duration:1000});
-ScrollReveal().reveal('.page-content .card:nth-child(2)', { origin: 'top', reset:true, distance:'50px', delay:400, duration:1000 });
-ScrollReveal().reveal('.page-content .card:nth-child(3)', { origin: 'top', reset:true, distance:'50px', delay:600, duration:1000 });
-ScrollReveal().reveal('.page-content .card:nth-child(4)', { origin: 'top', reset:true, distance:'50px', delay:800, duration:1000 });
-ScrollReveal().reveal('.page-content .card:nth-child(5)', { origin: 'top', reset:true, distance:'50px', delay:1000, duration:1000 });
 
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
 
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+};
 
+/*==================== Remove Toggle Icon And Navbar When Click Navbar Link (Scroll) ====================*/
 
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(1)', { origin: 'top', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(2)', { origin: 'bottom', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(3)', { origin: 'top', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(4)', { origin: 'bottom', reset:true, distance:'100px', delay:200, duration:500});
+window.onscroll = () => {
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+};
 
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(5)', { origin: 'bottom', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(6)', { origin: 'top', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(7)', { origin: 'bottom', reset:true, distance:'100px', delay:200, duration:500});
-ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(8)', { origin: 'top', reset:true, distance:'100px', delay:200, duration:500});

@@ -1,3 +1,32 @@
+var contenedor = document.querySelector('.page-content');
+var contenedorHeight = contenedor.offsetHeight;
+var cards = document.querySelectorAll('.card');
+var card = document.querySelector('.card');
+var cardHeight = card.offsetHeight;
+var descripcion = document.querySelector(".descripcion");
+var descripciones = document.querySelectorAll('.descripcion');
+
+// Va a la descripcion cuando se hace click en el tipo de seguro
+
+function scrollToDiv(divId, index) {
+  if (!(descripciones[index].classList.contains('visible'))){
+    var destino = document.getElementById(divId);
+    destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  }
+}
+
+// Cierra las descripciones cuando se clickea en el boton cerrar de aca descripcion del tipo de seguro
+
+function cerrarDescripcion() {
+  descripciones.forEach(function(desc){
+    desc.classList.remove('visible');
+    contenedor.style.height = contenedorHeight +'px';
+  });
+}
+
+
+
+
 // SLIDER
 
 $(function() {
@@ -32,45 +61,31 @@ $(function() {
     }
   });
 
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
-
-  var contenedor = document.querySelector('.page-content');
-  var contenedorHeight = contenedor.offsetHeight;
-
-  var cards = document.querySelectorAll('.card');
-  var card = document.querySelector('.card');
-  var cardHeight = card.offsetHeight;
-
-  var descripciones = document.querySelectorAll('.descripcion');
-
   cards.forEach(function(card, index) {
       card.addEventListener('click', function() {
           // Remover la clase 'active' de todas las tarjetas
           cards.forEach(function(card) {
               card.classList.remove('active');
           });
-          
+
           // Agregar la clase 'active' a la tarjeta clickeada
           cards[index].classList.add('active');
 
           // Verificar si la descripción correspondiente a la card clickeada está visible
           if (descripciones[index].classList.contains('visible')) {
               // Si está visible, ocultarla
-              cards[index].classList.remove('active');
-
+              cards[index].classList.remove('active');             
               contenedor.style.height = contenedorHeight +'px';
-
               descripciones[index].classList.remove('visible');
-          } else {
+          } 
+          else{
                   // Si no está visible, ocultar todas las descripciones y luego mostrar la descripción correspondiente a la card clickeada
                   descripciones.forEach(function(descripcion) {
-                  descripcion.classList.remove('visible');
-              });
-              if (window.innerWidth > 1024){
-                contenedor.style.height = '57rem';
+                    descripcion.classList.remove('visible');
+                  });
+              if (window.innerWidth > 1328){
+                contenedor.style.height = '61rem';
               }
               else{
                 if(window.innerWidth > 768){
@@ -78,11 +93,11 @@ document.addEventListener("DOMContentLoaded", function() {
                 }
                 else{
                   if(window.innerWidth > 480){
-                    contenedor.style.height = contenedorHeight + 600 + 'px';
+                    contenedor.style.height = contenedorHeight + 625 + 'px';
                   }
                   else{
                     if(window.innerWidth > 320){
-                      contenedor.style.height = contenedorHeight + 700 + 'px'
+                      contenedor.style.height = contenedorHeight + 950 + 'px'
                     }
                   }
                 }
@@ -94,6 +109,7 @@ document.addEventListener("DOMContentLoaded", function() {
     });
   });
 });
+
 // CONTACT
 
 const inputs = document.querySelectorAll(".input");
@@ -154,9 +170,6 @@ ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(5)', { orig
 ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(6)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
 ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(7)', { origin: 'bottom', reset:false, distance:'100px', delay:200, duration:500});
 ScrollReveal().reveal('.accidents-container .accidents-box:nth-child(8)', { origin: 'top', reset:false, distance:'100px', delay:200, duration:500});
-
-
-
 
 
 

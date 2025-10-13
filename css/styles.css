@@ -228,7 +228,7 @@ body{
 
 .logo img{
     display: block;
-    width: 60px;
+    width: 170px;
 }
 
 .navbar{
@@ -501,7 +501,7 @@ body{
 
 .page-content {
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-template-rows: min-content;
     grid-column-start: 1;
     grid-column-end: 4;
@@ -1242,6 +1242,10 @@ textarea.input{
     font-size: 1.4rem;
     border-radius: .4rem;
     background: var(--color1);
+}
+
+.credito{
+    
 }
 
 /* ---------------------- Breakpoints ---------------------- */

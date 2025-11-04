@@ -1245,7 +1245,7 @@ textarea.input{
 }
 
 .credito{
-    
+    color: cyan;
 }
 
 /* ---------------------- Breakpoints ---------------------- */
@@ -1398,7 +1398,8 @@ textarea.input{
         display: flex;
         opacity: 1;
         border-top: 2px solid var(--color1);
-        top: 3rem;
+        /* En base a las medidas absolutas */
+        top: 87.2px; 
         flex-direction: column;
         background: var(--color2);
 
@@ -1629,6 +1630,15 @@ textarea.input{
     .footer-box:nth-child(3) a{
         display: inline-block;
         width: 60%;
+    }
+
+    .copy-container p{
+        font-size: .85rem;
+    }
+
+    .whatsapp-button {
+        bottom: 40px;
+        right: 15px;
     }
 
 }

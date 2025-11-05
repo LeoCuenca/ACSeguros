@@ -8,21 +8,21 @@ var descripciones = document.querySelectorAll('.descripcion');
 
 // Va a la descripcion cuando se hace click en el tipo de seguro
 
-function scrollToDiv(divId, index) {
-  if (!(descripciones[index].classList.contains('visible'))){
-    var destino = document.getElementById(divId);
-    destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
-  }
-}
+// function scrollToDiv(divId, index) {
+//   if (!(descripciones[index].classList.contains('visible'))){
+//     var destino = document.getElementById(divId);
+//     destino.scrollIntoView({ behavior: 'smooth', block: 'start' });
+//   }
+// }
 
 // Cierra las descripciones cuando se clickea en el boton cerrar de aca descripcion del tipo de seguro
 
-function cerrarDescripcion() {
-  descripciones.forEach(function(desc){
-    desc.classList.remove('visible');
-    contenedor.style.height = contenedorHeight +'px';
-  });
-}
+// function cerrarDescripcion() {
+//   descripciones.forEach(function(desc){
+//     desc.classList.remove('visible');
+//     contenedor.style.height = contenedorHeight +'px';
+//   });
+// }
 
 // SLIDER
 
@@ -58,54 +58,58 @@ $(function() {
     }
   });
 
-document.addEventListener("DOMContentLoaded", function() {
-  cards.forEach(function(card, index) {
-      card.addEventListener('click', function() {
-          // Remover la clase 'active' de todas las tarjetas
-          cards.forEach(function(card) {
-              card.classList.remove('active');
-          });
+// CLICK EN CADA SEGURO PARA DESPLAZAR
 
-          // Agregar la clase 'active' a la tarjeta clickeada
-          cards[index].classList.add('active');
+// document.addEventListener("DOMContentLoaded", function() {
+//   cards.forEach(function(card, index) {
+//       card.addEventListener('click', function() {
+//           // Remover la clase 'active' de todas las tarjetas
+//           cards.forEach(function(card) {
+//               card.classList.remove('active');
+//           });
 
-          // Verificar si la descripción correspondiente a la card clickeada está visible
-          if (descripciones[index].classList.contains('visible')) {
-              // Si está visible, ocultarla
-              cards[index].classList.remove('active');             
-              contenedor.style.height = contenedorHeight +'px';
-              descripciones[index].classList.remove('visible');
-          } 
-          else{
-                  // Si no está visible, ocultar todas las descripciones y luego mostrar la descripción correspondiente a la card clickeada
-                  descripciones.forEach(function(descripcion) {
-                    descripcion.classList.remove('visible');
-                  });
-              if (window.innerWidth > 1328){
-                contenedor.style.height = '61rem';
-              }
-              else{
-                if(window.innerWidth > 768){
-                  contenedor.style.height = contenedorHeight + 700 + 'px';
-                }
-                else{
-                  if(window.innerWidth > 480){
-                    contenedor.style.height = contenedorHeight + 625 + 'px';
-                  }
-                  else{
-                    if(window.innerWidth > 320){
-                      contenedor.style.height = contenedorHeight + 950 + 'px'
-                    }
-                  }
-                }
+//           // Agregar la clase 'active' a la tarjeta clickeada
+//           cards[index].classList.add('active');
+
+//           // Verificar si la descripción correspondiente a la card clickeada está visible
+//           if (descripciones[index].classList.contains('visible')) {
+//               // Si está visible, ocultarla
+//               cards[index].classList.remove('active');             
+//               contenedor.style.height = contenedorHeight +'px';
+//               descripciones[index].classList.remove('visible');
+//           } 
+//           else{
+//                   // Si no está visible, ocultar todas las descripciones y luego mostrar la descripción correspondiente a la card clickeada
+//                   descripciones.forEach(function(descripcion) {
+//                     descripcion.classList.remove('visible');
+//                   });
+//               if (window.innerWidth > 1328){
+//                 // contenedor.style.height = '61rem';
+//                 contenedor.style.height = '100vh';
+//               }
+//               else{
+//                 if(window.innerWidth > 768){
+//                   // contenedor.style.height = contenedorHeight + 700 + 'px';
+//                   contenedor.style.height = '185vh';
+//                 }
+//                 else{
+//                   if(window.innerWidth > 480){
+//                     contenedor.style.height = contenedorHeight + 625 + 'px';
+//                   }
+//                   else{
+//                     if(window.innerWidth > 320){
+//                       contenedor.style.height = contenedorHeight + 950 + 'px'
+//                     }
+//                   }
+//                 }
                 
-              }
+//               }
 
-              descripciones[index].classList.add('visible');
-          }
-    });
-  });
-});
+//               descripciones[index].classList.add('visible');
+//           }
+//     });
+//   });
+// });
 
 // CONTACT
 
@@ -184,4 +188,3 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
-

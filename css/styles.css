@@ -6,7 +6,6 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    scroll-padding-top: 4rem;
     scroll-behavior: smooth;
     text-decoration: none;
     user-select: none;
@@ -636,7 +635,6 @@ body{
     overflow: hidden;
     padding: 1rem;
     min-height: 275px;
-    cursor: pointer;
     opacity: .8;
     text-align: center;
     color: whitesmoke;
@@ -1348,15 +1346,17 @@ textarea.input{
 @media screen and (max-width: 768px){
 
     section{
-        overflow: hidden;
+        overflow-x: hidden;
         padding: 30px 2rem;
     }
+
     #menu-icon{
         display: block;
         padding-right: 10px;
     }
 
     .header{
+        height: 10vh;
         padding: 1rem 1rem;
         border: none;
         transition: height 0.3s ease;

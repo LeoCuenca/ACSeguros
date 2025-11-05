@@ -188,3 +188,25 @@ window.onscroll = () => {
     menuIcon.classList.remove('bx-x');
     navbar.classList.remove('active');
 };
+
+/*==================== Permite que funcionen las anclas, aun con overflow hidden ====================*/
+
+document.querySelectorAll('a[href^="#"]').forEach(function(link) {
+  link.addEventListener('click', function(e) {
+    e.preventDefault();
+    
+    const target = document.querySelector(this.getAttribute('href'));
+    if (!target) return;
+
+    // Ejemplo: restar 10vh (10% de la altura visible del viewport)
+    const offsetVH = 12; 
+    const offset = window.innerHeight * (offsetVH / 100);
+    
+    const top = target.getBoundingClientRect().top + window.scrollY - offset;
+    
+    window.scrollTo({
+      top: top,
+      behavior: 'smooth'
+    });
+  });
+});
